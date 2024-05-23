@@ -8,6 +8,7 @@
   :root {
     --background: 324 100% 99%;
     --primary: 318 1% 7%;
+    --border-radius: 24px;
   }
 
   .dark {
@@ -30,5 +31,23 @@
   p,
   span {
     @apply font-main;
+  }
+}
+
+@layer component {
+  .my-container {
+    @apply mx-auto max-w-6xl px-2 xl:px-0;
+  }
+
+  .curve {
+    @apply relative;
+  }
+
+  .curve::before {
+    @apply absolute bg-[url('/vector/shape.svg')] bg-contain bg-no-repeat content-[''];
+  }
+
+  .curve::after {
+    @apply absolute bg-[url('/vector/shape.svg')] bg-contain bg-no-repeat content-[''];
   }
 }
