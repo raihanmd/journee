@@ -15,22 +15,29 @@
     --background: 318 1% 7%;
     --primary: 324 100% 99%;
   }
-}
 
-@layer base {
   body {
-    @apply bg-background;
+    @apply [scrollbar-color:_theme('colors.primary')] [scrollbar-width:_thin];
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span {
-    @apply font-main;
+  ::-webkit-scrollbar {
+    @apply w-[6px];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-primary/80;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
+  }
+
+  body {
+    @apply bg-background font-main;
   }
 }
 
@@ -43,11 +50,12 @@
     @apply relative;
   }
 
-  .curve::before {
+  .curve::before,
+  .curve::after {
     @apply absolute bg-[url('/vector/shape.svg')] bg-contain bg-no-repeat content-[''];
   }
 
-  .curve::after {
-    @apply absolute bg-[url('/vector/shape.svg')] bg-contain bg-no-repeat content-[''];
+  .swiper-pagination-bullet-active {
+    background: theme("colors.primary") !important;
   }
 }
