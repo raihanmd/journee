@@ -9,19 +9,21 @@
     --background: 324 100% 99%;
     --primary: 318 1% 7%;
     --border-radius: 24px;
+    --svg-path: url("/vector/curve-light.svg");
   }
 
   .dark {
     --background: 318 1% 7%;
     --primary: 324 100% 99%;
+    --svg-path: url("/vector/curve-dark.svg");
   }
 
   body {
-    @apply [scrollbar-color:_theme('colors.primary')] [scrollbar-width:_thin];
+    @apply scroll-smooth bg-background font-main [scrollbar-color:var(--primary)_var(--background)] [scrollbar-width:_thin];
   }
 
   ::-webkit-scrollbar {
-    @apply w-[6px];
+    @apply w-[6px] transition-all;
   }
 
   ::-webkit-scrollbar-track {
@@ -29,15 +31,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-md bg-primary/80;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/80;
-  }
-
-  body {
-    @apply scroll-smooth bg-background font-main;
+    @apply rounded-md bg-[#a9a9a9];
   }
 }
 
@@ -52,10 +46,20 @@
 
   .curve::before,
   .curve::after {
-    @apply absolute bg-[url('/vector/shape.svg')] bg-contain bg-no-repeat content-[''];
+    @apply absolute bg-contain bg-no-repeat content-[''] [background-image:_var(--svg-path)];
   }
 
   .swiper-pagination-bullet-active {
     background: theme("colors.primary") !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply transition-all;
   }
 }

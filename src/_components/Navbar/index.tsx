@@ -1,11 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useToggle, useWindowSize } from "usehooks-ts";
 import { Variants, motion } from "framer-motion";
-import { FaHamburger, FaInstagram } from "react-icons/fa";
+import { FaHamburger } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { useEffect } from "react";
+import { MdLightMode } from "react-icons/md";
+import { BsMoonFill } from "react-icons/bs";
+
+import { useTheme } from "~/hooks/useTheme";
 
 const hideNavItemsVariant: Variants = {
   hidden: {
@@ -16,15 +20,15 @@ const hideNavItemsVariant: Variants = {
       type: "spring",
     },
   },
-  visible: {
+  visible: (isFirstLoad) => ({
     opacity: 1,
     y: "0%",
     transition: {
-      delay: 1.1,
+      delay: isFirstLoad ? 0 : 1.1,
       duration: 0.5,
       type: "spring",
     },
-  },
+  }),
 };
 
 const buttonParent: Variants = {
@@ -34,9 +38,12 @@ const buttonParent: Variants = {
       staggerChildren: 0.2,
     },
   },
-  visible: {
-    transition: { delayChildren: 1.4, staggerChildren: 0.2 },
-  },
+  visible: (isFirstLoad) => ({
+    transition: {
+      delayChildren: isFirstLoad ? 0.2 : 1.4,
+      staggerChildren: 0.2,
+    },
+  }),
 };
 
 const buttonVariant: Variants = {
@@ -78,13 +85,13 @@ const mobileMenuVariant: Variants = {
 };
 
 const ulVariant: Variants = {
-  visible: {
+  visible: (isFirstLoad) => ({
     opacity: 1,
     transition: {
-      delayChildren: 1,
+      delayChildren: isFirstLoad ? 0 : 1,
       staggerChildren: 0.18,
     },
-  },
+  }),
   hidden: {
     opacity: 0,
     transition: {
@@ -111,13 +118,20 @@ const liVariant: Variants = {
     },
   },
 };
+
 export default function Navbar() {
+  const { toggle: toggleDarkMode, isDarkMode } = useTheme();
   const [isNavOpen, toggle, setIsNavOpen] = useToggle();
   const { width } = useWindowSize();
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
     if (width > 768) setIsNavOpen(false);
   }, [width]);
+
+  useEffect(() => {
+    setIsFirstLoad(false);
+  }, []);
 
   return (
     <>
@@ -131,25 +145,27 @@ export default function Navbar() {
           <div className="flex gap-4">
             <div className="curve relative rounded-br bg-background py-2 before:-bottom-[40px] before:size-[40px] after:-right-[40px] after:top-0 md:after:size-[40px]">
               <motion.p
+                custom={isFirstLoad}
                 variants={hideNavItemsVariant}
                 initial={"hidden"}
                 animate={isNavOpen ? "hidden" : "visible"}
-                className="p-2 text-4xl"
+                className="p-2 text-4xl text-primary"
               >
                 Jourñee.
               </motion.p>
             </div>
             <motion.ul
+              custom={isFirstLoad}
               initial="hidden"
               animate="visible"
               variants={ulVariant}
-              className="my-3 hidden w-[40ch] flex-1 items-center justify-center gap-5 rounded bg-background/60 px-10 backdrop-blur-md md:flex"
+              className="my-3 hidden w-[40ch] flex-1 items-center justify-center gap-5 rounded bg-background/60 px-10 text-primary backdrop-blur-md transition-all md:flex"
             >
               {NAV_LINK.map((link) => (
                 <motion.li key={link.label} variants={liVariant}>
                   <Link
                     href={link.href}
-                    className="transition-all hover:font-semibold hover:text-background"
+                    className="transition-all hover:font-semibold"
                   >
                     {link.label}
                   </Link>
@@ -158,13 +174,24 @@ export default function Navbar() {
             </motion.ul>
           </div>
           <motion.div
+            custom={isFirstLoad}
             initial="hidden"
             animate={isNavOpen ? "hidden" : "visible"}
             variants={buttonParent}
             className="curve flex h-auto w-auto items-center justify-center rounded-bl bg-background px-4 text-5xl before:-left-[40px] before:top-0 before:rotate-90 after:-bottom-[40px] after:right-0 after:size-[40px] after:rotate-90 md:before:size-[40px]"
           >
             <motion.i variants={buttonVariant}>
-              <FaInstagram className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background" />
+              {isDarkMode ? (
+                <MdLightMode
+                  onClick={() => toggleDarkMode()}
+                  className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
+                />
+              ) : (
+                <BsMoonFill
+                  onClick={() => toggleDarkMode()}
+                  className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
+                />
+              )}
             </motion.i>
             <motion.i variants={buttonVariant}>
               <FaHamburger
@@ -182,7 +209,10 @@ export default function Navbar() {
         className="fixed z-[10] h-[100svh] w-full bg-background/70 px-5 py-10 backdrop-blur-md sm:px-20"
       >
         <div className="flex items-center justify-between">
-          <motion.p variants={hideNavItemsVariant} className="p-2 text-4xl">
+          <motion.p
+            variants={hideNavItemsVariant}
+            className="p-2 text-4xl text-primary"
+          >
             Jourñee.
           </motion.p>
           <motion.i variants={hideNavItemsVariant} onClick={() => toggle()}>

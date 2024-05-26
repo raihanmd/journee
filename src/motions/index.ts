@@ -5,7 +5,6 @@ export const fadeInVariant: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 1.9,
       duration: 0.5,
     },
   },

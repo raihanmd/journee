@@ -2,6 +2,7 @@
 
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { cn } from "~/lib/utils";
 import { SwiperCarouselProps } from "../types";
 
@@ -26,7 +27,7 @@ export default function SwiperCarousel({
         <SwiperSlide
           key={index}
           className={cn(
-            "flex bg-teal-200 px-5 pb-40 pt-5 text-4xl font-bold text-primary",
+            "flex bg-teal-200 px-5 pb-40 pt-5 text-4xl font-bold text-black",
             slide.className,
           )}
         >

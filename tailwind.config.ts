@@ -18,6 +18,7 @@ const config = {
         main: ["Poppins", "sans-serif"],
       },
       colors: {
+        black: "#121212",
         primary: "hsl(var(--primary))",
         background: "hsl(var(--background))",
       },
