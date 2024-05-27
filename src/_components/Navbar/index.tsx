@@ -16,16 +16,14 @@ const hideNavItemsVariant: Variants = {
     opacity: 0,
     y: "-100%",
     transition: {
-      duration: 0.5,
       type: "spring",
     },
   },
   visible: (isFirstLoad) => ({
     opacity: 1,
-    y: "0%",
+    y: 0,
     transition: {
       delay: isFirstLoad ? 0 : 1.1,
-      duration: 0.5,
       type: "spring",
     },
   }),
@@ -51,15 +49,13 @@ const buttonVariant: Variants = {
     opacity: 0,
     y: "-100%",
     transition: {
-      duration: 0.5,
       type: "spring",
     },
   },
   visible: {
     opacity: 1,
-    y: "0%",
+    y: 0,
     transition: {
-      duration: 0.5,
       type: "spring",
     },
   },
@@ -67,7 +63,7 @@ const buttonVariant: Variants = {
 
 const mobileMenuVariant: Variants = {
   visible: {
-    y: "0%",
+    y: 0,
     transition: {
       delay: 0.5,
       duration: 1.1,
@@ -111,7 +107,7 @@ const liVariant: Variants = {
   },
   visible: {
     opacity: 1,
-    y: "0%",
+    y: 0,
     transition: {
       duration: 0.65,
       type: "spring",
@@ -132,6 +128,10 @@ export default function Navbar() {
   useEffect(() => {
     setIsFirstLoad(false);
   }, []);
+
+  if (isFirstLoad) {
+    return null;
+  }
 
   return (
     <>

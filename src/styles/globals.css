@@ -8,6 +8,8 @@
   :root {
     --background: 324 100% 99%;
     --primary: 318 1% 7%;
+    --secondary: 41 99% 47%;
+    --accent: 10 69% 60%;
     --border-radius: 24px;
     --svg-path: url("/vector/curve-light.svg");
   }
@@ -50,6 +52,7 @@
   }
 
   .swiper-pagination-bullet-active {
+    @apply transition-all;
     background: theme("colors.primary") !important;
   }
 
