@@ -21,7 +21,7 @@
   }
 
   body {
-    @apply scroll-smooth bg-background font-main [scrollbar-color:var(--primary)_var(--background)] [scrollbar-width:_thin];
+    @apply overflow-x-hidden scroll-smooth bg-background font-main [scrollbar-color:var(--primary)_var(--background)] [scrollbar-width:_thin];
   }
 
   ::-webkit-scrollbar {
@@ -34,6 +34,14 @@
 
   ::-webkit-scrollbar-thumb {
     @apply rounded-md bg-[#a9a9a9];
+  }
+
+  ::-moz-selection {
+    @apply bg-primary text-background;
+  }
+
+  ::selection {
+    @apply bg-primary text-background;
   }
 }
 
@@ -64,5 +72,14 @@
   h6,
   p {
     @apply transition-all;
+  }
+
+  .swiper-container {
+    @apply flex size-full items-center justify-center;
+  }
+
+  .swiper-slide {
+    @apply items-center justify-center px-5 text-center;
+    display: flex !important;
   }
 }

@@ -129,6 +129,14 @@ export default function Navbar() {
     setIsFirstLoad(false);
   }, []);
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isNavOpen]);
+
   if (isFirstLoad) {
     return null;
   }
@@ -180,19 +188,21 @@ export default function Navbar() {
             variants={buttonParent}
             className="curve flex h-auto w-auto items-center justify-center rounded-bl bg-background px-4 text-5xl before:-left-[40px] before:top-0 before:rotate-90 after:-bottom-[40px] after:right-0 after:size-[40px] after:rotate-90 md:before:size-[40px]"
           >
-            <motion.i variants={buttonVariant}>
-              {isDarkMode ? (
-                <MdLightMode
-                  onClick={() => toggleDarkMode()}
-                  className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
-                />
-              ) : (
-                <BsMoonFill
-                  onClick={() => toggleDarkMode()}
-                  className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
-                />
-              )}
-            </motion.i>
+              <motion.i
+                variants={buttonVariant}
+              >
+                {isDarkMode ? (
+                  <MdLightMode
+                    onClick={() => toggleDarkMode()}
+                    className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
+                  />
+                ) : (
+                  <BsMoonFill
+                    onClick={() => toggleDarkMode()}
+                    className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
+                  />
+                )}
+              </motion.i>
             <motion.i variants={buttonVariant}>
               <FaHamburger
                 className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background md:hidden"
