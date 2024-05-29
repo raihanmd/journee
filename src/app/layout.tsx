@@ -3,6 +3,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import "~/styles/globals.css";
+import { ThemeProvider } from "~/providers/ThemeProvoder";
 
 export const metadata = {
   title: "Create T3 App",
@@ -17,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body suppressHydrationWarning>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

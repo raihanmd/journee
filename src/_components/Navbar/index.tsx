@@ -6,10 +6,8 @@ import { useToggle, useWindowSize } from "usehooks-ts";
 import { Variants, motion } from "framer-motion";
 import { FaHamburger } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { MdLightMode } from "react-icons/md";
-import { BsMoonFill } from "react-icons/bs";
 
-import { useTheme } from "~/hooks/useTheme";
+import ThemeSwitch from "./ThemeSwitch";
 
 const hideNavItemsVariant: Variants = {
   hidden: {
@@ -116,9 +114,8 @@ const liVariant: Variants = {
 };
 
 export default function Navbar() {
-  const { toggle: toggleDarkMode, isDarkMode } = useTheme();
-  const [isNavOpen, toggle, setIsNavOpen] = useToggle();
   const { width } = useWindowSize();
+  const [isNavOpen, toggle, setIsNavOpen] = useToggle();
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
@@ -136,10 +133,6 @@ export default function Navbar() {
       document.body.style.overflow = "auto";
     }
   }, [isNavOpen]);
-
-  if (isFirstLoad) {
-    return null;
-  }
 
   return (
     <>
@@ -188,21 +181,9 @@ export default function Navbar() {
             variants={buttonParent}
             className="curve flex h-auto w-auto items-center justify-center rounded-bl bg-background px-4 text-5xl before:-left-[40px] before:top-0 before:rotate-90 after:-bottom-[40px] after:right-0 after:size-[40px] after:rotate-90 md:before:size-[40px]"
           >
-              <motion.i
-                variants={buttonVariant}
-              >
-                {isDarkMode ? (
-                  <MdLightMode
-                    onClick={() => toggleDarkMode()}
-                    className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
-                  />
-                ) : (
-                  <BsMoonFill
-                    onClick={() => toggleDarkMode()}
-                    className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background"
-                  />
-                )}
-              </motion.i>
+            <motion.i variants={buttonVariant}>
+              <ThemeSwitch />
+            </motion.i>
             <motion.i variants={buttonVariant}>
               <FaHamburger
                 className="rounded-full bg-background p-2 text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background md:hidden"
