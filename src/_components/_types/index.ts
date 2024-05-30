@@ -1,5 +1,5 @@
-import { ClassValue } from "clsx";
-import { StaticImageData } from "next/image";
+import { type ClassValue } from "clsx";
+import { type StaticImageData } from "next/image";
 
 export type TSlide = {
   content: React.ReactNode;

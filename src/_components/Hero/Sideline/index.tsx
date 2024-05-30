@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 
+import type { TSlide } from "~/_components/_types";
 import SwiperCarousel from "~/_components/ui/SwiperCarousel";
-import { TSlide } from "~/_components/_types";
 import { fadeInVariant } from "~/motions";
 
 export default function Sideline() {

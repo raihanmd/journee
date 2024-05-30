@@ -1,13 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
+import { Autoplay, EffectFade } from "swiper/modules";
+import { FaPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { fadeInVariant } from "~/motions";
-import { Autoplay, EffectFade } from "swiper/modules";
-import { FaPlane } from "react-icons/fa";
-import Link from "next/link";
 
 export default function Headline() {
   return (

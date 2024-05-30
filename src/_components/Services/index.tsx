@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import Header from "../ui/Header";
 import Image from "next/image";
-import { TServiceCard } from "../_types";
+import type { TServiceCard } from "../_types";
 
 import weather from "~/../public/vector/weather.svg";
 import plane from "~/../public/vector/plane.svg";

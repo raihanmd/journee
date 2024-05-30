@@ -4,7 +4,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { cn } from "~/lib/utils";
-import { SwiperCarouselProps } from "../../_types";
+import type { SwiperCarouselProps } from "~/_components/_types";
 
 export default function SwiperCarousel({
   slides,

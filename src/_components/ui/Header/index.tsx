@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { HeaderProps } from "~/_components/_types";
+import type { HeaderProps } from "~/_components/_types";
 import { fadeInVariant } from "~/motions";
 
 export default function Header({ title, headline }: HeaderProps) {

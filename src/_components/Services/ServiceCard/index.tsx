@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
-import { ServiceCardProps } from "~/_components/_types";
+import type { ServiceCardProps } from "~/_components/_types";
 import { fadeInVariant } from "~/motions";
 import { cn } from "~/lib/utils";
 

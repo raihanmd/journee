@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-import { TDestinationCard } from "../_types";
+import type { TDestinationCard } from "../_types";
 import DestinationCard from "./DestinationCard";
 
 import card1 from "~/../public/images/card-1.webp";

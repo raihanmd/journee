@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useToggle, useWindowSize } from "usehooks-ts";
-import { Variants, motion } from "framer-motion";
+import { type Variants, motion } from "framer-motion";
 import { FaHamburger } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
@@ -120,11 +120,11 @@ export default function Navbar() {
 
   useEffect(() => {
     if (width > 768) setIsNavOpen(false);
-  }, [width]);
+  }, [width, setIsNavOpen]);
 
   useEffect(() => {
     setIsFirstLoad(false);
-  }, []);
+  }, [setIsFirstLoad]);
 
   useEffect(() => {
     if (isNavOpen) {

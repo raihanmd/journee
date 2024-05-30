@@ -4,7 +4,7 @@ import Image from "next/image";
 import { BsCursorFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-import { DestinationsCardProps } from "~/_components/_types";
+import type { DestinationsCardProps } from "~/_components/_types";
 import { fadeInVariant } from "~/motions";
 
 export default function DestinationCard({ card }: DestinationsCardProps) {
