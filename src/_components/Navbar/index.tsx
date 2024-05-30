@@ -136,7 +136,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-[5]">
+      <div className="fixed inset-x-0 top-0 z-[15]">
         <div className="h-2 bg-background" />
         <motion.div
           initial="visible"
@@ -197,7 +197,7 @@ export default function Navbar() {
         variants={mobileMenuVariant}
         initial="hidden"
         animate={isNavOpen ? "visible" : "hidden"}
-        className="fixed z-[10] h-[100svh] w-full bg-background/70 px-5 py-10 backdrop-blur-md sm:px-20"
+        className="fixed z-[20] h-[100svh] w-full bg-background/70 px-5 py-10 backdrop-blur-md sm:px-20"
       >
         <div className="flex items-center justify-between">
           <motion.p
@@ -210,7 +210,7 @@ export default function Navbar() {
             <IoClose className="rounded-full bg-background p-2 text-5xl text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background" />
           </motion.i>
         </div>
-        <div className="h-full w-full py-10 text-center">
+        <div className="h-full w-full py-10 text-center mix-blend-difference">
           <motion.ul
             variants={ulVariant}
             className="flex h-full flex-col content-around justify-center gap-10"
@@ -238,16 +238,16 @@ export default function Navbar() {
 
 const NAV_LINK = [
   {
+    label: "Services",
+    href: "#services",
+  },
+  {
     label: "Destinations",
     href: "#destinations",
   },
   {
     label: "Hotels",
     href: "#hotels",
-  },
-  {
-    label: "Flights",
-    href: "#flights",
   },
   {
     label: "Booking",

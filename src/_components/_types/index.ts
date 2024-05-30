@@ -12,13 +12,28 @@ export type SwiperCarouselProps = {
   className?: ClassValue;
 };
 
-export type TCard = {
+export type TDestinationCard = {
   img: StaticImageData;
   description: string;
   price: string;
-  trip: string;
+  trip: number;
+};
+
+export type TServiceCard = {
+  img: StaticImageData;
+  title: string;
+  description: string;
 };
 
 export type DestinationsCardProps = {
-  card: TCard;
+  card: TDestinationCard;
+};
+
+export type ServiceCardProps = {
+  card: TServiceCard;
+};
+
+export type HeaderProps = {
+  title: string;
+  headline: string;
 };

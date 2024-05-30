@@ -8,8 +8,6 @@
   :root {
     --background: 324 100% 99%;
     --primary: 318 1% 7%;
-    --secondary: 41 99% 47%;
-    --accent: 10 69% 60%;
     --border-radius: 24px;
     --svg-path: url("/vector/curve-light.svg");
   }
@@ -20,8 +18,12 @@
     --svg-path: url("/vector/curve-dark.svg");
   }
 
+  html {
+    @apply scroll-pt-10 scroll-smooth;
+  }
+
   body {
-    @apply overflow-x-hidden scroll-smooth bg-background font-main [scrollbar-color:var(--primary)_var(--background)] [scrollbar-width:_thin];
+    @apply overflow-x-hidden bg-background font-main [scrollbar-color:var(--primary)_var(--background)] [scrollbar-width:_thin];
   }
 
   ::-webkit-scrollbar {
@@ -81,5 +83,9 @@
   .swiper-slide {
     @apply items-center justify-center px-5 text-center;
     display: flex !important;
+  }
+
+  img {
+    @apply select-none;
   }
 }
