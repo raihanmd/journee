@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
@@ -14,23 +13,13 @@ export default function ServiceCard({ card }: ServiceCardProps) {
     <motion.div
       variants={fadeInVariant}
       className={cn(
-        "relative flex w-[250px] flex-col items-center justify-center gap-2 rounded px-2 py-5 shadow-lg transition-all hover:shadow-lg",
+        "relative flex w-[250px] flex-col items-center justify-center gap-2 rounded border border-primary px-2 pb-5 pt-10 shadow-lg transition-all hover:shadow-lg",
         {
-          "border border-primary": resolvedTheme === "dark",
+          "border-none": resolvedTheme === "light",
         },
       )}
     >
-      <Image
-        draggable={false}
-        src={card.img}
-        width={80}
-        height={80}
-        alt={card.description}
-        loading="lazy"
-        className={cn("h-[80px] w-[80px] rounded-t", {
-          "w-[150px]": card.title === "Best Flights",
-        })}
-      />
+      <card.icon className="text-5xl transition-all" />
       <div className="flex flex-col items-center justify-center gap-3 px-5 py-5 text-center">
         <p className="text-lg font-semibold">{card.title}</p>
         <p>{card.description}</p>

@@ -1,5 +1,6 @@
-import { type ClassValue } from "clsx";
-import { type StaticImageData } from "next/image";
+import type { ClassValue } from "clsx";
+import type { StaticImageData } from "next/image";
+import type { IconType } from "react-icons/lib";
 
 export type TSlide = {
   content: React.ReactNode;
@@ -20,7 +21,7 @@ export type TDestinationCard = {
 };
 
 export type TServiceCard = {
-  img: StaticImageData;
+  icon: IconType;
   title: string;
   description: string;
 };

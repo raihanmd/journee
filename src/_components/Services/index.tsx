@@ -1,15 +1,13 @@
 "use client";
-
-import { motion } from "framer-motion";
-
-import Header from "../ui/Header";
 import Image from "next/image";
-import type { TServiceCard } from "../_types";
+import { motion } from "framer-motion";
+import { GiStripedSun } from "react-icons/gi";
+import { SlPlane } from "react-icons/sl";
+import { PiPlanet } from "react-icons/pi";
+import { GoGear } from "react-icons/go";
 
-import weather from "~/../public/vector/weather.svg";
-import plane from "~/../public/vector/plane.svg";
-import localEvent from "~/../public/vector/local-event.svg";
-import customization from "~/../public/vector/customization.svg";
+import type { TServiceCard } from "../_types";
+import Header from "../ui/Header";
 import ServiceCard from "./ServiceCard";
 
 export default function Services() {
@@ -43,23 +41,23 @@ export default function Services() {
 
 export const SERVICE_CARDS: TServiceCard[] = [
   {
-    img: weather,
+    icon: GiStripedSun,
     title: "Calculated Weather",
     description: "Built Wicket longer admire do barton vanity itself do in it.",
   },
   {
-    img: plane,
+    icon: SlPlane,
     title: "Best Flights",
     description: "Engrossed listening. Park gate sell they west hard for the.",
   },
   {
-    img: localEvent,
+    icon: PiPlanet,
     title: "Local Events",
     description:
       "Barton vanity itself do in it. Preferd to men it engrossed listening. .",
   },
   {
-    img: customization,
+    icon: GoGear,
     title: "Customization",
     description:
       "We deliver outsourced aviation services for military customers.",
