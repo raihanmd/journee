@@ -60,9 +60,9 @@ export default function Headline() {
       </motion.div>
       <motion.div
         transition={{ when: "beforeChildren", staggerChildren: 0.5 }}
-        className="curve absolute bottom-0 left-0 z-[5] flex w-full flex-col items-start gap-5 bg-background px-5 py-8 text-primary before:-top-[40px] before:left-0 before:size-[40px] before:-rotate-90 after:-top-[40px] after:right-0 after:size-[40px] after:rotate-180 sm:max-w-[75%] sm:rounded-tr sm:after:-right-[40px] sm:after:bottom-0 sm:after:top-auto sm:after:-rotate-90"
+        className="curve absolute bottom-0 left-0 z-[5] flex w-full flex-col items-start gap-5 bg-background px-5 py-8 text-primary before:-top-[40px] before:left-0 before:size-[40px] before:-rotate-90 after:-top-[40px] after:right-0 after:size-[40px] after:rotate-180 sm:max-w-[65%] sm:rounded-tr sm:after:-right-[40px] sm:after:bottom-0 sm:after:top-auto sm:after:-rotate-90"
       >
-        <motion.p variants={fadeInVariant} className="text-5xl md:text-6xl">
+        <motion.p variants={fadeInVariant} className="text-5xl 2xl:text-6xl">
           Travel, enjoy and feelin' awesome.
         </motion.p>
         <motion.span

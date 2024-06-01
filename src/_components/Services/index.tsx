@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { GiStripedSun } from "react-icons/gi";
@@ -12,9 +13,7 @@ import ServiceCard from "./ServiceCard";
 
 export default function Services() {
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
+    <div
       id="services"
       className="my-container relative flex flex-col gap-10 py-20 text-primary"
     >
@@ -27,15 +26,12 @@ export default function Services() {
         className="absolute right-0 top-0"
       />
       <Header title="Our Services" headline="We Offer Best Services" />
-      <motion.div
-        transition={{ staggerChildren: 0.2 }}
-        className="flex flex-wrap items-stretch justify-center gap-5"
-      >
+      <motion.div className="flex flex-wrap items-stretch justify-center gap-5">
         {SERVICE_CARDS.map((card) => (
           <ServiceCard key={card.title} card={card} />
         ))}
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 

@@ -12,6 +12,8 @@ export default function ServiceCard({ card }: ServiceCardProps) {
   return (
     <motion.div
       variants={fadeInVariant}
+      initial="hidden"
+      whileInView="visible"
       className={cn(
         "relative flex w-[250px] flex-col items-center justify-center gap-2 rounded border border-primary px-2 pb-5 pt-10 shadow-lg transition-all hover:shadow-lg",
         {

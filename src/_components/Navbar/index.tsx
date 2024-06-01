@@ -14,7 +14,7 @@ const hideNavItemsVariant: Variants = {
     opacity: 0,
     y: "-100%",
     transition: {
-      type: "spring",
+      type: "easeOut",
     },
   },
   visible: (isFirstLoad) => ({
@@ -22,7 +22,7 @@ const hideNavItemsVariant: Variants = {
     y: 0,
     transition: {
       delay: isFirstLoad ? 0 : 1.1,
-      type: "spring",
+      type: "easeOut",
     },
   }),
 };
@@ -48,6 +48,8 @@ const buttonVariant: Variants = {
     y: "-100%",
     transition: {
       type: "spring",
+      stiffness: 200,
+      damping: 20,
     },
   },
   visible: {
@@ -55,6 +57,8 @@ const buttonVariant: Variants = {
     y: 0,
     transition: {
       type: "spring",
+      stiffness: 200,
+      damping: 20,
     },
   },
 };
@@ -101,6 +105,8 @@ const liVariant: Variants = {
     transition: {
       duration: 0.25,
       type: "spring",
+      stiffness: 200,
+      damping: 20,
     },
   },
   visible: {
@@ -109,6 +115,8 @@ const liVariant: Variants = {
     transition: {
       duration: 0.65,
       type: "spring",
+      stiffness: 200,
+      damping: 20,
     },
   },
 };
@@ -202,6 +210,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <motion.p
             variants={hideNavItemsVariant}
+            initial={"hidden"}
+            animate={isNavOpen ? "visible" : "hidden"}
             className="p-2 text-4xl text-primary"
           >
             Jourñee.
@@ -210,7 +220,7 @@ export default function Navbar() {
             <IoClose className="rounded-full bg-background p-2 text-5xl text-primary transition-all hover:cursor-pointer hover:bg-primary hover:text-background active:bg-primary/80 active:text-background" />
           </motion.i>
         </div>
-        <div className="h-full w-full py-10 text-center mix-blend-difference">
+        <div className="h-full w-full py-10 text-center">
           <motion.ul
             variants={ulVariant}
             className="flex h-full flex-col content-around justify-center gap-10"

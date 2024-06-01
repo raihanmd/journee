@@ -14,7 +14,7 @@ export default function Sideline() {
     >
       <motion.div
         variants={fadeInVariant}
-        className="hidden h-auto w-full overflow-hidden rounded-[2rem] border border-primary lg:block"
+        className="hidden h-auto w-full flex-col overflow-hidden rounded-[2rem] border border-primary lg:flex"
       >
         <SwiperCarousel
           slides={SLIDES_1}
@@ -25,7 +25,10 @@ export default function Sideline() {
         variants={fadeInVariant}
         className="hidden h-auto w-full lg:block"
       >
-        <SwiperCarousel slides={SLIDES_2} className="rounded-full" />
+        <SwiperCarousel
+          slides={SLIDES_2}
+          className="rounded-[2rem] 2xl:rounded-full"
+        />
       </motion.div>
     </motion.div>
   );

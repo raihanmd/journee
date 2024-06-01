@@ -29,7 +29,7 @@ export default function SwiperCarousel({
           <SwiperSlide
             key={index}
             className={cn(
-              "select-none bg-primary py-20 text-4xl font-bold text-black",
+              "size-full select-none bg-primary py-16 text-3xl font-bold text-black 2xl:py-20 2xl:text-4xl",
               slide.className,
             )}
           >
@@ -39,7 +39,9 @@ export default function SwiperCarousel({
       </Swiper>
       {description && (
         <div className="p-5">
-          <p className="text-2xl font-semibold text-primary">{description}</p>
+          <p className="text-xl font-semibold text-primary 2xl:text-2xl">
+            {description}
+          </p>
         </div>
       )}
     </>

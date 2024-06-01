@@ -11,6 +11,8 @@ export default function DestinationCard({ card }: DestinationsCardProps) {
   return (
     <motion.div
       variants={fadeInVariant}
+      initial="hidden"
+      whileInView="visible"
       className="relative rounded border border-primary transition-all hover:shadow-lg"
     >
       {+card.trip === 12 && (
