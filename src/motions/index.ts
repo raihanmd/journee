@@ -1,11 +1,17 @@
 import { type Variants } from "framer-motion";
 
 export const fadeInVariant: Variants = {
-  hidden: { opacity: 0 },
+  hidden: {
+    opacity: 0,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
   visible: {
     opacity: 1,
     transition: {
       duration: 0.5,
+      staggerChildren: 0.1,
     },
   },
 };

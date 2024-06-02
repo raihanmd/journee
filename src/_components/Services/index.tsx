@@ -39,23 +39,24 @@ export const SERVICE_CARDS: TServiceCard[] = [
   {
     icon: GiStripedSun,
     title: "Calculated Weather",
-    description: "Built Wicket longer admire do barton vanity itself do in it.",
+    description: "Get accurate weather forecasts for your destination.",
   },
   {
     icon: SlPlane,
     title: "Best Flights",
-    description: "Engrossed listening. Park gate sell they west hard for the.",
+    description:
+      "Find the best flights with competitive prices and great service.",
   },
   {
     icon: PiPlanet,
     title: "Local Events",
     description:
-      "Barton vanity itself do in it. Preferd to men it engrossed listening. .",
+      "Discover exciting local events and activities during your stay.",
   },
   {
     icon: GoGear,
     title: "Customization",
     description:
-      "We deliver outsourced aviation services for military customers.",
+      "We offer personalized services to meet your unique travel needs.",
   },
 ];

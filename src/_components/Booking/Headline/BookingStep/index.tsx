@@ -1,0 +1,40 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+import { BookingStepProps } from "~/_components/_types";
+import { cn } from "~/lib/utils";
+import { fadeInVariant } from "~/motions";
+
+export default function BookingStep({ step }: BookingStepProps) {
+  return (
+    <motion.div
+      variants={fadeInVariant}
+      viewport={{ once: true }}
+      initial="hidden"
+      whileInView={"visible"}
+      className="flex items-center gap-3 px-5 md:px-0 "
+    >
+      <motion.div
+        variants={fadeInVariant}
+        className={cn(
+          "flex size-[40px] shrink-0 items-center justify-center rounded-lg bg-pink-300 text-xl text-white md:size-[50px] md:text-2xl",
+          step.iconBg,
+        )}
+      >
+        <step.icon />
+      </motion.div>
+      <motion.div variants={fadeInVariant} className="flex shrink flex-col">
+        <motion.p variants={fadeInVariant} className="font-semibold md:text-lg">
+          {step.title}
+        </motion.p>
+        <motion.p
+          variants={fadeInVariant}
+          className="text text-sm text-primary/80"
+        >
+          {step.description}
+        </motion.p>
+      </motion.div>
+    </motion.div>
+  );
+}

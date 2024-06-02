@@ -11,6 +11,7 @@ export default function DestinationCard({ card }: DestinationsCardProps) {
   return (
     <motion.div
       variants={fadeInVariant}
+      viewport={{ once: true }}
       initial="hidden"
       whileInView="visible"
       className="relative rounded border border-primary transition-all hover:shadow-lg"

@@ -12,6 +12,7 @@ export default function ServiceCard({ card }: ServiceCardProps) {
   return (
     <motion.div
       variants={fadeInVariant}
+      viewport={{ once: true }}
       initial="hidden"
       whileInView="visible"
       className={cn(

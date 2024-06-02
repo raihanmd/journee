@@ -34,7 +34,18 @@ export type ServiceCardProps = {
   card: TServiceCard;
 };
 
-export type HeaderProps = {
+export type HeaderProps = React.HtmlHTMLAttributes<HTMLDivElement> & {
   title: string;
   headline: string;
+};
+
+export type TBookingStep = {
+  icon: IconType;
+  iconBg?: ClassValue;
+  title: string;
+  description: string;
+};
+
+export type BookingStepProps = {
+  step: TBookingStep;
 };

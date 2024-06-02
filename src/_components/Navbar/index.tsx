@@ -256,11 +256,11 @@ const NAV_LINK = [
     href: "#destinations",
   },
   {
-    label: "Hotels",
-    href: "#hotels",
-  },
-  {
     label: "Booking",
     href: "#booking",
+  },
+  {
+    label: "Hotels",
+    href: "#hotels",
   },
 ];
