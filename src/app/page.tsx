@@ -9,8 +9,8 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero />
-      <Services />
       <Destinations />
+      <Services />
       <Booking />
     </>
   );

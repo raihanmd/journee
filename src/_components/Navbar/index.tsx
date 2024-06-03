@@ -205,7 +205,7 @@ export default function Navbar() {
         variants={mobileMenuVariant}
         initial="hidden"
         animate={isNavOpen ? "visible" : "hidden"}
-        className="fixed z-[20] h-[100svh] w-full bg-background/70 px-5 py-10 backdrop-blur-md sm:px-20"
+        className="fixed z-[20] h-screen w-full bg-background/70 px-5 py-10 backdrop-blur-md sm:px-20"
       >
         <div className="flex items-center justify-between">
           <motion.p

@@ -15,7 +15,7 @@ export default function Services() {
   return (
     <div
       id="services"
-      className="my-container relative flex flex-col gap-10 py-20 text-primary"
+      className="my-container relative flex flex-col gap-10 py-10 text-primary"
     >
       <Image
         draggable={false}

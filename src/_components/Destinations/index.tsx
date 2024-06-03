@@ -15,7 +15,7 @@ export default function Destinations() {
       initial="hidden"
       animate="visible"
       id="destinations"
-      className="my-container flex flex-col gap-10 overflow-hidden py-20 text-primary"
+      className="my-container flex flex-col gap-10 overflow-hidden py-10 text-primary"
     >
       <Header title="Top Selling" headline="Top Destinations" />
       <motion.div
