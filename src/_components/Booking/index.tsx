@@ -1,12 +1,28 @@
+"use client";
+import { useRef } from "react";
+
 import Headline from "./Headline";
+import { useScroll, useTransform } from "framer-motion";
 import Trip from "./Trip";
 
 export default function Booking() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+  });
+
+  const scrollProgress = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
   return (
-    <div className="my-container relative h-[300vh] xl:h-auto" id="booking">
-      <div className="sticky top-24 grid h-screen gap-10 overflow-hidden text-primary xl:grid-cols-2">
+    <div
+      ref={scrollRef}
+      className="my-container relative h-[300dvh] py-10 xl:h-auto"
+      id="booking"
+    >
+      <div className="sticky top-24 flex flex-col gap-4 text-primary md:gap-10 xl:grid xl:grid-cols-2">
         <Headline />
-        <Trip />
+        <Trip scrollProgress={scrollProgress} />
       </div>
     </div>
   );

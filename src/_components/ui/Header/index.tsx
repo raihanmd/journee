@@ -14,7 +14,7 @@ export default function Header({ title, headline, ...props }: HeaderProps) {
       viewport={{ once: true }}
       variants={fadeInVariant}
       className={cn(
-        "flex w-full flex-col items-center justify-center gap-2 text-center",
+        "flex w-full flex-col items-center justify-center gap-2 text-center md:px-5 lg:px-0",
         props.className,
       )}
     >

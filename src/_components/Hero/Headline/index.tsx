@@ -70,7 +70,7 @@ export default function Headline() {
           whileHover={{ rotateZ: 90 }}
           className="inline w-auto rounded-full border border-primary p-4 text-3xl text-primary hover:cursor-pointer hover:shadow"
         >
-          <Link href={"#services"}>
+          <Link href={"#destinations"}>
             <FaPlane />
           </Link>
         </motion.span>

@@ -13,7 +13,7 @@ export default function BookingStep({ step }: BookingStepProps) {
       viewport={{ once: true }}
       initial="hidden"
       whileInView={"visible"}
-      className="flex items-center gap-3 px-5 md:px-0 "
+      className="flex items-center gap-3 px-8 sm:px-28 md:px-0"
     >
       <motion.div
         variants={fadeInVariant}
@@ -30,7 +30,7 @@ export default function BookingStep({ step }: BookingStepProps) {
         </motion.p>
         <motion.p
           variants={fadeInVariant}
-          className="text text-sm text-primary/80"
+          className="text-xs text-primary/80 md:text-sm"
         >
           {step.description}
         </motion.p>

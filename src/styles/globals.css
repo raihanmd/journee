@@ -19,7 +19,7 @@
   }
 
   html {
-    @apply scroll-pt-3 scroll-smooth;
+    @apply scroll-pt-10 scroll-smooth;
   }
 
   body {

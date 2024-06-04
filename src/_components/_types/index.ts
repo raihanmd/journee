@@ -1,4 +1,5 @@
 import type { ClassValue } from "clsx";
+import type { MotionValue } from "framer-motion";
 import type { StaticImageData } from "next/image";
 import type { IconType } from "react-icons/lib";
 
@@ -48,4 +49,8 @@ export type TBookingStep = {
 
 export type BookingStepProps = {
   step: TBookingStep;
+};
+
+export type TripProps = {
+  scrollProgress: MotionValue<string>;
 };

@@ -248,12 +248,12 @@ export default function Navbar() {
 
 const NAV_LINK = [
   {
-    label: "Services",
-    href: "#services",
-  },
-  {
     label: "Destinations",
     href: "#destinations",
+  },
+  {
+    label: "Services",
+    href: "#services",
   },
   {
     label: "Booking",

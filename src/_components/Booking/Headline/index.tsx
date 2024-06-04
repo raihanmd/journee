@@ -10,13 +10,13 @@ import Header from "~/_components/ui/Header";
 
 export default function Headline() {
   return (
-    <div className="flex flex-col items-center gap-5 xl:sticky xl:top-1/3 xl:h-[20rem]">
+    <div className="flex h-full flex-col items-center gap-3 md:gap-5 xl:sticky xl:top-1/4 xl:h-[20rem] 2xl:top-1/3">
       <Header
         headline="Book Your Next Trip In 3 Easy Steps"
         title="Easy and Fast"
         className="xl:items-start xl:text-left"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2 md:gap-4">
         {BOOKING_STEPS.map((step) => (
           <BookingStep key={step.title} step={step} />
         ))}
@@ -43,7 +43,7 @@ const BOOKING_STEPS: TBookingStep[] = [
   {
     icon: IoCarSportOutline,
     iconBg: "bg-teal-700",
-    title: "Reach Airport on Selected Date",
+    title: "Airport on Selected Date",
     description:
       "Arrive at the airport on the date you selected to start your journey.",
   },
