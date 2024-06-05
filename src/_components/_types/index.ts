@@ -54,3 +54,15 @@ export type BookingStepProps = {
 export type TripProps = {
   scrollProgress: MotionValue<string>;
 };
+
+export type TTripCard = {
+  destination: string;
+  img: StaticImageData;
+  date: string;
+  author: string;
+  traveler: number;
+};
+
+export type TripCardProps = {
+  card: TTripCard;
+};

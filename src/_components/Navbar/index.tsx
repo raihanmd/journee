@@ -168,7 +168,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               variants={ulVariant}
-              className="my-3 hidden w-[40ch] flex-1 items-center justify-center gap-5 rounded bg-background/60 px-10 text-primary backdrop-blur-md transition-all md:flex"
+              className="my-3 hidden w-[42ch] flex-1 items-center justify-center gap-5 rounded bg-background/60 px-10 text-primary backdrop-blur-md transition-all md:flex"
             >
               {NAV_LINK.map((link) => (
                 <motion.li key={link.label} variants={liVariant}>
@@ -260,7 +260,7 @@ const NAV_LINK = [
     href: "#booking",
   },
   {
-    label: "Hotels",
-    href: "#hotels",
+    label: "Testimonial",
+    href: "#testimonial",
   },
 ];
