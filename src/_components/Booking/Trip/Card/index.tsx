@@ -19,7 +19,7 @@ export default function Card({ card }: TripCardProps) {
       viewport={{ once: true }}
       initial="hidden"
       whileInView="visible"
-      className="flex h-[40svh] w-[350px] flex-col overflow-hidden rounded border border-primary bg-background md:h-[50svh] xl:w-[400px]"
+      className="flex h-[max(40svh,_350px)] w-[300px] flex-col overflow-hidden rounded border border-primary bg-background sm:w-[350px] md:h-[max(50svh,_400px)] xl:w-[400px]"
     >
       <Image
         draggable={false}
@@ -30,35 +30,41 @@ export default function Card({ card }: TripCardProps) {
         placeholder="blur"
         className="h-[65%] w-full object-cover object-center"
       />
-      <div className="flex h-[35%] w-full flex-col justify-between px-4 py-4">
-        <div className="flex justify-between text-xl">
+      <div className="flex h-[35%] w-full flex-col justify-between px-4 py-2 md:py-4">
+        <div className="flex flex-col md:gap-2">
+          <div className="flex justify-between text-lg sm:text-xl">
+            <motion.p
+              variants={fadeInVariant}
+              className="font-semibold text-primary"
+            >
+              {card.destination}
+            </motion.p>
+            <motion.p variants={fadeInVariant} className="text-primary/80">
+              {card.date}
+            </motion.p>
+          </div>
           <motion.p
             variants={fadeInVariant}
-            className="font-semibold text-primary"
+            className="text-base text-primary/80"
           >
-            {card.destination}
+            By {card.author}
           </motion.p>
-          <motion.p variants={fadeInVariant} className="text-primary/80">
-            {card.date}
-          </motion.p>
+          <motion.div
+            variants={fadeInVariant}
+            className="hidden gap-3 text-xl sm:flex"
+          >
+            {BUTTON.map((ButtonIcon, i) => (
+              <motion.section
+                key={i}
+                variants={fadeInVariant}
+                className="inline rounded-full bg-primary/20 p-2 text-primary/60 hover:cursor-pointer"
+              >
+                <ButtonIcon className="text-sm md:text-base" />
+              </motion.section>
+            ))}
+          </motion.div>
         </div>
-        <motion.p
-          variants={fadeInVariant}
-          className="text-base text-primary/80"
-        >
-          By {card.author}
-        </motion.p>
-        <motion.div variants={fadeInVariant} className="flex gap-3 text-xl">
-          {BUTTON.map((ButtonIcon, i) => (
-            <motion.section
-              key={i}
-              variants={fadeInVariant}
-              className="inline rounded-full bg-primary/20 p-2 text-primary/60 hover:cursor-pointer"
-            >
-              <ButtonIcon />
-            </motion.section>
-          ))}
-        </motion.div>
+
         <div className="flex items-center justify-between text-primary/80">
           <motion.div
             variants={fadeInVariant}

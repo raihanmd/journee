@@ -1,8 +1,9 @@
 import Navbar from "~/_components/Navbar";
 import Hero from "~/_components/Hero";
-import Services from "~/_components/Services";
 import Destinations from "~/_components/Destinations";
+import Services from "~/_components/Services";
 import Booking from "~/_components/Booking";
+import Testimonial from "~/_components/Testimonial";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Destinations />
       <Services />
       <Booking />
+      <Testimonial />
     </>
   );
 }
