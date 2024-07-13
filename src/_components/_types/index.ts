@@ -77,3 +77,5 @@ export type TTestimonial = {
 export type SwiperContentProps = {
   testimonial: TTestimonial;
 };
+
+export type GlowProps = React.HtmlHTMLAttributes<HTMLDivElement>;

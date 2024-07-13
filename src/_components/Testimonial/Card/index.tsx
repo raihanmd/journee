@@ -1,53 +1,62 @@
+import { useState } from "react";
 import { EffectCards, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Avatar, AvatarFallback, AvatarImage } from "~/_components/ui/Avatar";
+import { motion } from "framer-motion";
 
 import type { TTestimonial } from "~/_components/_types";
-import CardNavigation from "./CardNavigation";
-import { useState } from "react";
 import { getInitials } from "~/lib/utils";
+import { fadeInVariant } from "~/motions";
+import CardNavigation from "./CardNavigation";
+import Glow from "~/_components/ui/Glow";
 
 export default function Card() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   return (
-    <div className="relative z-[2] h-full w-full pr-12">
-      <Avatar className="absolute -left-8 -top-8 z-[3] border-2 border-primary bg-background">
-        <AvatarImage src={TESTIMONIALS[currentIndex]?.img} />
-        <AvatarFallback>
-          {getInitials(TESTIMONIALS[currentIndex]!.name as string)}
-        </AvatarFallback>
-      </Avatar>
-      <Swiper
-        effect={"cards"}
-        grabCursor={true}
-        modules={[EffectCards, Navigation]}
-        direction={"vertical"}
-        navigation={{
-          nextEl: ".swiper-navigation .swiper-button-next",
-          prevEl: ".swiper-navigation .swiper-button-prev",
-        }}
-        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-        className="h-80 w-full"
-      >
-        {TESTIMONIALS.map((item) => (
-          <SwiperSlide
-            key={item.name}
-            className="flex flex-col items-center justify-between rounded-md border border-primary bg-background p-10"
-          >
-            <p className="text-center text-xl text-primary/70">
-              "{item.content}"
-            </p>
-            <div className="flex w-full flex-col gap-2 text-start">
-              <p className="text-lg font-semibold">{item.name}</p>
-              <p>{item.address}</p>
-            </div>
-          </SwiperSlide>
-        ))}
+    <motion.div
+      variants={fadeInVariant}
+      className="relative mx-auto px-10 sm:max-w-2xl xl:px-0"
+    >
+      <div className="relative z-[2] h-full w-full xl:pr-12">
+        <Avatar className="absolute -left-8 -top-8 z-[3] border-2 border-primary bg-background">
+          <AvatarImage src={TESTIMONIALS[currentIndex]!.img} />
+          <AvatarFallback>
+            {getInitials(TESTIMONIALS[currentIndex]!.name as string)}
+          </AvatarFallback>
+        </Avatar>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards, Navigation]}
+          direction={"vertical"}
+          navigation={{
+            nextEl: ".swiper-navigation .swiper-button-next",
+            prevEl: ".swiper-navigation .swiper-button-prev",
+          }}
+          onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+          className="h-[350px] w-full md:h-80"
+        >
+          {TESTIMONIALS.map((item) => (
+            <SwiperSlide
+              key={item.name}
+              className="flex h-full flex-col items-center justify-between rounded-md border border-primary bg-background p-8 sm:p-10"
+            >
+              <p className="text-center text-xl text-primary/70">
+                "{item.content}"
+              </p>
+              <div className="flex w-full flex-col gap-2 text-start">
+                <p className="text-lg font-semibold">{item.name}</p>
+                <p>{item.address}</p>
+              </div>
+            </SwiperSlide>
+          ))}
 
-        <CardNavigation />
-      </Swiper>
-    </div>
+          <CardNavigation />
+        </Swiper>
+      </div>
+      <Glow className="-left-10 top-10 xl:-right-2 xl:bottom-6 xl:left-auto xl:top-auto" />
+    </motion.div>
   );
 }
 
