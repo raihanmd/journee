@@ -66,3 +66,14 @@ export type TTripCard = {
 export type TripCardProps = {
   card: TTripCard;
 };
+
+export type TTestimonial = {
+  name: string;
+  img: string;
+  address: string;
+  content: string;
+};
+
+export type SwiperContentProps = {
+  testimonial: TTestimonial;
+};

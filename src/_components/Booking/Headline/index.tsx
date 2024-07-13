@@ -10,7 +10,7 @@ import Header from "~/_components/ui/Header";
 
 export default function Headline() {
   return (
-    <div className="flex h-full flex-col items-center gap-3 md:gap-5 xl:sticky xl:top-1/4 xl:h-[20rem] 2xl:top-1/3">
+    <div className="flex h-full flex-col items-center gap-3 md:gap-5 xl:sticky xl:top-1/4 xl:h-96 2xl:top-1/3">
       <Header
         headline="Book Your Next Trip In 3 Easy Steps"
         title="Easy and Fast"

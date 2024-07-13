@@ -1,12 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 
 import type { ServiceCardProps } from "~/_components/_types";
 import { fadeInVariant } from "~/motions";
 
 export default function ServiceCard({ card }: ServiceCardProps) {
-  const { resolvedTheme } = useTheme();
   return (
     <motion.div
       variants={fadeInVariant}
