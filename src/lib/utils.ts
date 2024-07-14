@@ -34,7 +34,7 @@ export function getRandomDate() {
 export function getInitials(name: string): string {
   const nameArray = name.split(" ");
   if (nameArray.length === 1) {
-    return nameArray[0]![0]!.toUpperCase() as string;
+    return nameArray[0]![0]!.toUpperCase();
   } else {
     return nameArray
       .map((part) => part[0])

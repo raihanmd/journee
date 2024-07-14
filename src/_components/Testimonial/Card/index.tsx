@@ -22,7 +22,7 @@ export default function Card() {
         <Avatar className="absolute -left-8 -top-8 z-[3] border-2 border-primary bg-background">
           <AvatarImage src={TESTIMONIALS[currentIndex]!.img} />
           <AvatarFallback>
-            {getInitials(TESTIMONIALS[currentIndex]!.name as string)}
+            {getInitials(TESTIMONIALS[currentIndex]!.name)}
           </AvatarFallback>
         </Avatar>
         <Swiper
