@@ -55,7 +55,7 @@ export default function Card() {
           <CardNavigation />
         </Swiper>
       </div>
-      <Glow className="-left-10 top-10 xl:-right-2 xl:bottom-6 xl:left-auto xl:top-auto" />
+      <Glow className="-left-10 top-10 xl:-right-6 xl:bottom-6 xl:left-auto xl:top-auto" />
     </motion.div>
   );
 }

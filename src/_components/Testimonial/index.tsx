@@ -11,7 +11,7 @@ export default function Testimonial() {
       initial="hidden"
       whileInView={"visible"}
       id="testimonial"
-      className="my-container grid grid-cols-1 flex-col gap-20 overflow-hidden py-10 text-primary xl:grid-cols-2 xl:gap-10 xl:py-20"
+      className="my-container grid grid-cols-1 flex-col gap-20 py-10 text-primary xl:grid-cols-2 xl:gap-10 xl:py-20"
     >
       <Headline />
       <Card />
