@@ -48,7 +48,7 @@ export default function Subscribe() {
 
         <h2 className="text-center text-3xl font-bold text-black/80 transition-all">
           Subscribe to get information, latest news and other interesting offers
-          about Journee
+          about Jourñee.
         </h2>
         <div className="z-[1] flex w-full gap-3 md:w-[90%] lg:w-[70%]">
           <Input className="p-7" placeholder="Your Email" />

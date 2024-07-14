@@ -79,3 +79,8 @@ export type SwiperContentProps = {
 };
 
 export type GlowProps = React.HtmlHTMLAttributes<HTMLDivElement>;
+
+export type TFooterInfo = {
+  label: string;
+  links: string[];
+};

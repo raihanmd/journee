@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EffectCards, Navigation } from "swiper/modules";
+import { Autoplay, EffectCards, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Avatar, AvatarFallback, AvatarImage } from "~/_components/ui/Avatar";
 import { motion } from "framer-motion";
@@ -28,7 +28,10 @@ export default function Card() {
         <Swiper
           effect={"cards"}
           grabCursor={true}
-          modules={[EffectCards, Navigation]}
+          autoplay={{
+            delay: 7000,
+          }}
+          modules={[EffectCards, Navigation, Autoplay]}
           direction={"vertical"}
           navigation={{
             nextEl: ".swiper-navigation .swiper-button-next",
